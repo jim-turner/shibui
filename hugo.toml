@@ -1,6 +1,8 @@
-baseURL = 'https://example.org/'
+baseURL = 'http://jimturnerstudio.com/'
 languageCode = 'en-US'
-title = 'My New Hugo Site'
+title = 'jim.turner/studio'
+theme = "shibui"
+relativeURLs = true
 
 [menus]
   [[menus.main]]
