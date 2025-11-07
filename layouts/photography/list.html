@@ -1,0 +1,38 @@
+
+
+
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+
+<div class="gallery">
+  {{ range .Pages }}
+    <div class="photo">
+      <img src="{{ .Params.image }}" alt="{{ .Title }}" onclick="openLightbox('{{ .Params.image }}', '{{ .Title }}')">
+      <p>{{ .Title }}</p>
+    </div>
+  {{ end }}
+</div>
+
+<!-- Lightbox container -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" alt="">
+  <p id="lightbox-caption"></p>
+</div>
+
+<script>
+function openLightbox(src, caption) {
+  const lightbox = document.getElementById('lightbox');
+  const img = document.getElementById('lightbox-img');
+  const cap = document.getElementById('lightbox-caption');
+  img.src = src;
+  cap.textContent = caption;
+  lightbox.style.display = 'flex';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').style.display = 'none';
+}
+</script>
+
+
+{{ end }}
